@@ -27,36 +27,78 @@ const restaurent ={
             will be delivered to ${address} at ${time}`
         );
     },
+    orderPasta: function(ing1, ing2, ing3){
+        console.log(`Here is your declicious pasta with ${ing1}, ${ing2} and ${ing3}`);
+    }
 };
-restaurent.orderDelivery({
-    time: '22:30',
-    address: 'giao thuy, nam dinh',
-    mainIndex: 2,
-    starterIndex: 2,
-});
-restaurent.orderDelivery({
-    address: 'giao thuy, nam dinh',
-    starterIndex: 1,
-});
-const {name, openingHours, categories} = restaurent;
-console.log (name, openingHours, categories);
+const arr = [7,8,9];
+const badNewArr =[1,2,arr[0], arr[1], arr[2]];
+console.log(badNewArr);
 
-const { name: restaurentName, openingHours: hours, categories: tags} = restaurent;
-console.log(restaurentName, hours, tags);
+const newArr = [1,2,...arr];
+console.log(newArr);
 
-const {menu =[], starterMenu: starters=[]} = restaurent;
-console.log(menu, starters);
+console.log(...newArr);
+console.log(1,2,7,8,9);
 
-let a = 111;
-let b = 999;
-const obj ={a: 23, b: 7, c: 14};
-({a,b}=obj);
-console.log(a,b);
+const newMenu =[...restaurent.mainMenu, 'Gnocci'];
+console.log(newMenu);
+//copy
+const mainMenuCopy =[...restaurent.mainMenu];
 
-const{
-    tri: {open, close},
-} = openingHours;
-console.log(open, close);
+// join 2 arrays
+const menu = [...restaurent.starterMenu, ...restaurent.mainMenu];
+console.log(menu);
+//
+const str = 'Jonas';
+const letters = [...str,'','S.'];
+console.log(letters);
+console.log(...str);
+//
+const ingredients =[
+    prompt("Let's make pasta! Ingredien 1?"),
+    prompt('Ingredien 2?'),
+    prompt('Ingredien 3'),
+];
+console.log(ingredients);
+restaurent.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+restaurent.orderPasta(...ingredients);
+//obj
+const newRestaurant = {foundedIn: 1998, ... restaurent, founder: 'Guiseppe'};
+console.log(newRestaurant);
+const restaurentCopy ={...restaurent};
+restaurentCopy.name ='Ristorante Roma';
+console.log(restaurent.name);
+console.log(restaurent.name);
+// restaurent.orderDelivery({
+//     time: '22:30',
+//     address: 'giao thuy, nam dinh',
+//     mainIndex: 2,
+//     starterIndex: 2,
+// });
+// restaurent.orderDelivery({
+//     address: 'giao thuy, nam dinh',
+//     starterIndex: 1,
+// });
+// const {name, openingHours, categories} = restaurent;
+// console.log (name, openingHours, categories);
+
+// const { name: restaurentName, openingHours: hours, categories: tags} = restaurent;
+// console.log(restaurentName, hours, tags);
+
+// const {menu =[], starterMenu: starters=[]} = restaurent;
+// console.log(menu, starters);
+
+// let a = 111;
+// let b = 999;
+// const obj ={a: 23, b: 7, c: 14};
+// ({a,b}=obj);
+// console.log(a,b);
+
+// const{
+//     tri: {open, close},
+// } = openingHours;
+// console.log(open, close);
 // const arr = [2,3,4];
 // const a = arr[0];
 // const b = arr[1];
