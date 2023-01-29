@@ -35,25 +35,31 @@ const restaurent = {
         console.log(othersIngredients);
     },
 };
-console.log('---- OR ----');
-console.log(3 || 'Jonas');
-console.log('' || 'Jonas');
-console.log(true || 0);
-console.log(undefined|| null);
-console.log(undefined || 0 || '' || 'Hello' || 23 || null);
-restaurent.numGuests = 23;
-const guests1 = restaurent.numGuests ? restaurent.numGuests: 10;
-console.log(guests1);
-const guests2 = restaurent.numGuests || 10;
-console.log(guests2);
-console.log('---- AND ----');
-console.log(0 && 'Jonas');
-console.log(7 && 'Jonas');
-console.log('Hello' && 23 && null && 'Jonas');
-if(restaurent.orderPizza){
-    restaurent.orderPizza('mushrooms', 'spinach');
-}
-restaurent.orderPizza && restaurent.orderPizza('mushrooms','spinach');
+restaurent.numGuests = 0;
+const guests = restaurent.numGuests || 10;
+console.log(guests);
+//
+const guestCorrect= restaurent.numGuests ?? 10;
+console.log(guestCorrect);
+// console.log('---- OR ----');
+// console.log(3 || 'Jonas');
+// console.log('' || 'Jonas');
+// console.log(true || 0);
+// console.log(undefined|| null);
+// console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+// restaurent.numGuests = 23;
+// const guests1 = restaurent.numGuests ? restaurent.numGuests: 10;
+// console.log(guests1);
+// const guests2 = restaurent.numGuests || 10;
+// console.log(guests2);
+// console.log('---- AND ----');
+// console.log(0 && 'Jonas');
+// console.log(7 && 'Jonas');
+// console.log('Hello' && 23 && null && 'Jonas');
+// if(restaurent.orderPizza){
+//     restaurent.orderPizza('mushrooms', 'spinach');
+// }
+// restaurent.orderPizza && restaurent.orderPizza('mushrooms','spinach');
 // const arr = [1, 2, ...[3, 4]];
 // const [a, b, ...others] = [1, 2, 3, 4, 5];
 // console.log[a, b, others];
