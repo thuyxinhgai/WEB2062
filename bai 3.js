@@ -1,45 +1,49 @@
+const weekdays =['mon', 'tue','wed','thu','fri','sat','sun'];
+const openingHours= {
+    [weekdays[3]]: {
+        open: 12,
+        close: 22,
+    },
+    [weekdays[4]]: {
+        open: 11,
+        close: 23,
+    },
+    [`day-${2+4}`]: {
+        open: 0,
+        close: 24,
+    },
+};
 const restaurent = {
     name: 'Quynh Thuy',
     location: '19 tuoi, Nam Dinh ',
     categories: ['pho', 'banh mi', 'nem chu', 'nhan nong'],
     starterMenu: ['Hang', 'Trung Duc', 'Trung', 'Huy', 'Thien Duc'],
     mainMenu: ['pizza', 'chicken', 'Pasta'],
-    openingHours: {
-        thu: {
-            open: 12,
-            close: 22,
-        },
-        tri: {
-            open: 11,
-            close: 23,
-        },
-        sat: {
-            open: 0,
-            close: 24,
-        },
-    },
-    order: function (starterIndex, mainIndex) {
+    //
+    openingHours,
+    order (starterIndex, mainIndex) {
         return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
     },
-    orderDelivery: function ({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
+    orderDelivery ({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
         console.log(
             `Order received! ${this.starterMenu[starterIndex]}and ${this.mainMenu[mainIndex]}
             will be delivered to ${address} at ${time}`
         );
     },
-    orderPasta: function (ing1, ing2, ing3) {
+    orderPasta (ing1, ing2, ing3) {
         console.log(`Here is your declicious pasta with ${ing1}, ${ing2} and ${ing3}`);
     },
-    orderPizza: function (mainIngredients, ...othersIngredients) {
+    orderPizza (mainIngredients, ...othersIngredients) {
         console.log(mainIngredients);
         console.log(othersIngredients);
     },
 };
-const menu =[...restaurent.starterMenu, ...restaurent.mainMenu];
-for (const item of menu) console.log(item);
-for (const [i, el] of menu.entries()){
-    console.log(`${i+1}: ${el}`);
-}
+
+// const menu =[...restaurent.starterMenu, ...restaurent.mainMenu];
+// for (const item of menu) console.log(item);
+// for (const [i, el] of menu.entries()){
+//     console.log(`${i+1}: ${el}`);
+// }
 // console.log([...menu.entries()]);
 // const game ={
 //     team1: 'Bayern Munich',
