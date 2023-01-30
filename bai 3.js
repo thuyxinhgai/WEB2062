@@ -38,7 +38,27 @@ const restaurent = {
         console.log(othersIngredients);
     },
 };
-
+//
+if(restaurent.openingHours && restaurent.openingHours.mon)
+console.log(restaurent.openingHours.mon.open)
+//
+console.log(restaurent.openingHours.mon?.open)
+console.log(restaurent.openingHours?.mon?.open)
+//exp
+const days =['mon', 'tue','wed','thu','fri','sat','sun'];
+for(const day of days){
+    const open = restaurent.openingHours[day]?.open ?? 'closed';
+    console.log(`On ${open}, we open at ${open}`);
+}
+//method
+console.log(restaurent.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurent.orderRisotto?.(0, 1) ?? 'Method does not exist');
+//arrays
+const users = [{name:'Quynh Thuy', email:'thuy@gmail.com'}];
+// const users =[];
+console.log(users[0] ?.name ?? 'User array empty');
+if(users.length > 0) console.log(users[0].name);
+else console.log('User array empty')
 // const menu =[...restaurent.starterMenu, ...restaurent.mainMenu];
 // for (const item of menu) console.log(item);
 // for (const [i, el] of menu.entries()){
