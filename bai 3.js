@@ -1,5 +1,5 @@
-const weekdays =['mon', 'tue','wed','thu','fri','sat','sun'];
-const openingHours= {
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const openingHours = {
     [weekdays[3]]: {
         open: 12,
         close: 22,
@@ -8,7 +8,7 @@ const openingHours= {
         open: 11,
         close: 23,
     },
-    [`day-${2+4}`]: {
+    [`day-${2 + 4}`]: {
         open: 0,
         close: 24,
     },
@@ -21,39 +21,75 @@ const restaurent = {
     mainMenu: ['pizza', 'chicken', 'Pasta'],
     //
     openingHours,
-    order (starterIndex, mainIndex) {
+    order(starterIndex, mainIndex) {
         return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
     },
-    orderDelivery ({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
+    orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
         console.log(
             `Order received! ${this.starterMenu[starterIndex]}and ${this.mainMenu[mainIndex]}
             will be delivered to ${address} at ${time}`
         );
     },
-    orderPasta (ing1, ing2, ing3) {
+    orderPasta(ing1, ing2, ing3) {
         console.log(`Here is your declicious pasta with ${ing1}, ${ing2} and ${ing3}`);
     },
-    orderPizza (mainIngredients, ...othersIngredients) {
+    orderPizza(mainIngredients, ...othersIngredients) {
         console.log(mainIngredients);
         console.log(othersIngredients);
     },
 };
-const properties = Object.keys(openingHours);
-console.log(properties);
-let openStr = `We are open on ${properties.length} days: `;
-for(const day of properties){
-    openStr += `${day},`
-}
-console.log(openStr);
-//
-const values = Object.values(openingHours);
-console.log(values);
-//[key, value]
-const entries = Object.entries(openingHours);
-// console.log(entries);
-for(const [day, {open, close}] of entries){
-    console.log(`On ${day} we open at ${open} and close at ${close}`);
-}
+
+const game = {
+    team1: 'Bayern Munich',
+    team2: 'Borrussia Dortmund',
+    players: [
+        [
+            'Neuer', 'Pavard', 'Martinez', 'Alaba', 'Davies', 'Kimmich', 'Goretzka', 'Coman', 'Muller', 'Gnarby', 'Lewandowski',
+        ],
+        [
+            'Burki', 'Schulz', 'Hummels', 'Akanji', 'Hakimi', 'Weigl', 'Witsel', 'Hazard', 'Brandt', 'Sancho', 'Gotze',
+        ],
+    ],
+    score: '4:0',
+    scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+    date: 'Nov 9th, 2037',
+    odds: {
+        team1: 1.33,
+        x: 3.25,
+        team2: 6.5,
+
+    },
+};
+// //1
+// for (const [i, player] of game.scored.entries())
+//     console.log(`Goal ${i + 1} : ${player}`)
+// //2
+// const odds = Object.values(game.odds);
+// let average = 0;
+// for (const odd of odds) average += odd;
+// average /= odds.length;
+// console.log(average)
+// //3
+// for (const [team, odd] of Object.entries(game.odds)) {
+//     const teamStr = team === 'x' ? 'draw' : 'victory ${game[team]}'
+//     console.log(`Odd of ${teamStr} ${odd}`);
+// }
+// const properties = Object.keys(openingHours);
+// console.log(properties);
+// let openStr = `We are open on ${properties.length} days: `;
+// for(const day of properties){
+//     openStr += `${day},`
+// }
+// console.log(openStr);
+// //
+// const values = Object.values(openingHours);
+// console.log(values);
+// //[key, value]
+// const entries = Object.entries(openingHours);
+// // console.log(entries);
+// for(const [day, {open, close}] of entries){
+//     console.log(`On ${day} we open at ${open} and close at ${close}`);
+// }
 
 // if(restaurent.openingHours && restaurent.openingHours.mon)
 // console.log(restaurent.openingHours.mon.open)
