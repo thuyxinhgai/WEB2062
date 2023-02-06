@@ -38,28 +38,48 @@ const restaurent = {
         console.log(othersIngredients);
     },
 };
+const ordersSet = new Set ([
+    'Pasta','Pizza','Pizza','Risotto','Pasta','Pizza',
+]);
+console.log(ordersSet);
+console.log(new Set ('Jonas'));
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+// ordersSet.clear();
+console.log(ordersSet)
+for(const order of ordersSet) console.log(order);
 
-const game = {
-    team1: 'Bayern Munich',
-    team2: 'Borrussia Dortmund',
-    players: [
-        [
-            'Neuer', 'Pavard', 'Martinez', 'Alaba', 'Davies', 'Kimmich', 'Goretzka', 'Coman', 'Muller', 'Gnarby', 'Lewandowski',
-        ],
-        [
-            'Burki', 'Schulz', 'Hummels', 'Akanji', 'Hakimi', 'Weigl', 'Witsel', 'Hazard', 'Brandt', 'Sancho', 'Gotze',
-        ],
-    ],
-    score: '4:0',
-    scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-    date: 'Nov 9th, 2037',
-    odds: {
-        team1: 1.33,
-        x: 3.25,
-        team2: 6.5,
+const staff= ['Waiter','Chef','Waiter','Mannager','Chef','Waiter'];
+const staffUnique = [...new Set (staff)];
+console.log(staffUnique);
 
-    },
-};
+console.log(new Set (['Waiter','Chef','Waiter','Mannager','Chef','Waiter']).size);
+console.log(new Set ('ăerzdxfcg').size);
+// const game = {
+//     team1: 'Bayern Munich',
+//     team2: 'Borrussia Dortmund',
+//     players: [
+//         [
+//             'Neuer', 'Pavard', 'Martinez', 'Alaba', 'Davies', 'Kimmich', 'Goretzka', 'Coman', 'Muller', 'Gnarby', 'Lewandowski',
+//         ],
+//         [
+//             'Burki', 'Schulz', 'Hummels', 'Akanji', 'Hakimi', 'Weigl', 'Witsel', 'Hazard', 'Brandt', 'Sancho', 'Gotze',
+//         ],
+//     ],
+//     score: '4:0',
+//     scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//     date: 'Nov 9th, 2037',
+//     odds: {
+//         team1: 1.33,
+//         x: 3.25,
+//         team2: 6.5,
+
+//     },
+// };
 // //1
 // for (const [i, player] of game.scored.entries())
 //     console.log(`Goal ${i + 1} : ${player}`)
